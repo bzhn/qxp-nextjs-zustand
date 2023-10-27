@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Product } from "@/entities/Product";
+import AddToCart from "./_components/AddToCart";
 
 interface Props {
   product: Product;
@@ -25,7 +26,7 @@ const ProductCard = ({ product }: Props) => {
           ${product.price.toFixed(2)}
         </p>
         <p className="text-gray-600 text-sm mt-2">{product.description}</p>
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-4 grid grid-cols-2 items-center">
           <div className="flex items-center">
             <span className="text-gray-700">Rating:</span>
             <div className="ml-2 flex">
@@ -45,6 +46,15 @@ const ProductCard = ({ product }: Props) => {
                 {product.rating.rate} ({product.rating.count})
               </span>
             </div>
+          </div>
+          <div className="justify-self-end">
+            <AddToCart product={product}>
+              <input
+                type="button"
+                value="Add to Cart"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              />
+            </AddToCart>
           </div>
         </div>
       </div>
