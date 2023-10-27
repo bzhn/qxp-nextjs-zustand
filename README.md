@@ -1,3 +1,31 @@
+# Tutorial
+
+## Create Next.js application
+
+```bash
+npx create-next-app@latest .
+```
+
+I am using Typescript and `src/` directory, if it's important for you.
+
+## Install Zustand
+
+```sh
+pnpm add zustand # or npm install zustand or yarn add zustand
+```
+
+## Create directory structure
+
+I use `src/` directory.
+
+```sh
+
+```
+
+---
+
+# Other
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
