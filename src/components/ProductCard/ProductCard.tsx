@@ -6,7 +6,7 @@ interface Props {
   product: Product;
 }
 
-export const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product }: Props) => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
       <Image
@@ -51,3 +51,5 @@ export const ProductCard = ({ product }: Props) => {
     </div>
   );
 };
+
+export default ProductCard;

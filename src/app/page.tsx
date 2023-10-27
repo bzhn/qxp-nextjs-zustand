@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { ProductList } from "@/entities/Product";
-import { ProductCard } from "@/components/ProductCard/ProductCard";
+import ProductCard from "@/components/ProductCard";
 
 const GetProducts = async (): Promise<ProductList> => {
   const res = await fetch("https://fakestoreapi.com/products");
