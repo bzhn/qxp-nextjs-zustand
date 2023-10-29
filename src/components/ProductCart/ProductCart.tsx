@@ -3,13 +3,13 @@
 import { useCartStore } from "@/store/cart";
 
 const ProductCart = () => {
-  const { cart, itemCount } = useCartStore();
+  const { cart } = useCartStore();
 
   return (
     <div>
       {cart.map((product, idx) => (
         <div key={idx}>
-          {itemCount(product.id)} pcs. - {product.title}
+          {product.count} [ID: {product.id}] pcs. - {product.title}
         </div>
       ))}
     </div>

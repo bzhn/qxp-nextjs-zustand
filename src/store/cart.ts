@@ -8,7 +8,6 @@ interface CartItem extends Product {
 export type CartStore = {
   cart: CartItem[];
   count: () => number;
-  itemCount: (id: number) => number;
   incrementItem: (id: number) => void;
   decrementItem: (id: number) => void;
   setItemCount: (id: number, count: number) => void;
@@ -54,14 +53,6 @@ export const useCartStore = create<CartStore>()((set, get) => ({
     const { cart } = get();
     const updatedCart = setCountInCart(cart, id, count);
     set({ cart: updatedCart });
-  },
-  itemCount: (id: number): number => {
-    const { cart } = get();
-    const item = cart.find((item) => (item.id = id));
-    if (item) {
-      return item.count;
-    }
-    return 0;
   },
   totalPrice: () => {
     const { cart } = get();
