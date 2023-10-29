@@ -9,7 +9,7 @@ const ProductCart = () => {
     <div>
       {cart.map((product, idx) => (
         <div key={idx}>
-          {product.count} [ID: {product.id}] pcs. - {product.title}
+          {product.count} pcs. [ID: {product.id}] - {product.title}
         </div>
       ))}
     </div>
