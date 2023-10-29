@@ -110,7 +110,6 @@ const incrementInCart = (cart: CartItem[], id: number): CartItem[] => {
 
 const decrementInCart = (cart: CartItem[], id: number): CartItem[] => {
   const item = cart.find((item) => item.id === id);
-  console.debug(item, cart, id);
   if (item) {
     return cart.map((item) => {
       if (item.id === id) {
