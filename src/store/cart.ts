@@ -96,7 +96,7 @@ const removeFromCart = (cart: CartItem[], id: number): CartItem[] => {
 };
 
 const incrementInCart = (cart: CartItem[], id: number): CartItem[] => {
-  const item = cart.find((item) => (item.id = id));
+  const item = cart.find((item) => item.id === id);
   if (item) {
     return cart.map((item) => {
       if (item.id === id) {
@@ -109,7 +109,8 @@ const incrementInCart = (cart: CartItem[], id: number): CartItem[] => {
 };
 
 const decrementInCart = (cart: CartItem[], id: number): CartItem[] => {
-  const item = cart.find((item) => (item.id = id));
+  const item = cart.find((item) => item.id === id);
+  console.debug(item, cart, id);
   if (item) {
     return cart.map((item) => {
       if (item.id === id) {
@@ -127,7 +128,7 @@ const setCountInCart = (
   id: number,
   count: number
 ): CartItem[] => {
-  const item = cart.find((item) => (item.id = id));
+  const item = cart.find((item) => item.id === id);
   if (item) {
     return cart.map((item) => {
       if (item.id === id) {
