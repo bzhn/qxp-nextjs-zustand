@@ -1,9 +1,16 @@
 "use client";
 
-import { useCartStore } from "@/store/cart";
+import useStore from "@/store/useStore";
+import { CartStore, useCartStore } from "@/store/cart";
 
 const ProductCart = () => {
-  const { cart } = useCartStore();
+  const cartStore = useStore<CartStore, CartStore>(
+    useCartStore,
+    (state: any) => state
+  );
+
+  if (!cartStore) return <div></div>;
+  const { cart } = cartStore;
 
   return (
     <div>
